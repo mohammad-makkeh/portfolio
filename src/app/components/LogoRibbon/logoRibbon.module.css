@@ -1,0 +1,24 @@
+.logo-ribbon-wrapper {
+
+}
+.logo-ribbon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.logo-ribbon__logos {
+    display: flex;
+    gap: 20px;
+}
+.logo-ribbon__logos .logo {
+    width: 100px;
+    height: 30px;
+    background-color: gray;
+}
+
+
+
+
+
+

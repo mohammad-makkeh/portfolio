@@ -1,0 +1,60 @@
+.header {
+    position: fixed;
+    top: 0;
+    left :0;
+    right: 0;
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px solid #08010e33;
+    z-index: 10;
+    padding-block: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s;
+}
+.header-blur{
+    background-color: #0e010157;
+    backdrop-filter: blur(10px);
+}
+
+.branding{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--font-mono);
+    transition: .3s;
+}
+.branding:hover{
+    opacity: .75;
+}
+.logo {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: end;
+}
+.nav ul li a{
+    /* letter-spacing: 8px; */
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+}
+
+@media (max-width: 700px) {
+}
+
+@media (max-width: 400px) {
+}
+
+@media (prefers-color-scheme: dark) {
+}
