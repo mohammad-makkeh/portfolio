@@ -7,57 +7,48 @@ import useIsPageScrolled from "@/hooks/useIsPageScrolled";
 
 export interface IHeroProps {}
 
-const GATEWAY_LAYERS_COUNT: number = 40;
+const GATEWAY_LAYERS_COUNT: number = 20;
 const GATEWAY_LAYERS_BASE_HUE: number = 267;
-const GATEWAY_MIN_LAYER_SCALE: number = GATEWAY_LAYERS_COUNT / 100;
+const GATEWAY_LAYERS_SPACING: number = 1.25;
 
 function GateWayLayer({ i }: { i: number }) {
-    const gatewayLayerRef = React.useRef(null);
-    const inView = useInView(gatewayLayerRef, {
-        margin: "0px 0px -400px 0px",
-    });
+    const { scrollY } = useIsPageScrolled();
+    // const gatewayLayerRef = React.useRef(null);
 
-    const scaleY =
-        1 -
-        (i + 1) * ((1 - GATEWAY_MIN_LAYER_SCALE) / GATEWAY_LAYERS_COUNT) +
-        scrollY * 0.0007;
-    const scaleX =
-        1 - (i + 1) * (1.4 / GATEWAY_LAYERS_COUNT) + scrollY * 0.0027;
     const hue = GATEWAY_LAYERS_BASE_HUE + i * 2;
     const lightness = 50 + (i + 1) * Math.ceil(50 / GATEWAY_LAYERS_COUNT);
 
+    
+    const iInverse = GATEWAY_LAYERS_COUNT - i;
+    const scaleFactor = ((GATEWAY_LAYERS_COUNT - 1) * 400) - i * 400;
+    const scrollScale = 1 + ((scrollY * iInverse * 0.09) * scaleFactor) / 19000000;
+    const translateScale = (scrollY * i * 0.01) ;
+    
+    const scale = Math.min(scrollScale, 2.5);
+    const yTranslate = Math.min(translateScale, 400);
+
     return (
-        <motion.div
-            key={i}
-            ref={gatewayLayerRef}
+        <div
+            // key={i}
+            // ref={gatewayLayerRef}
             className={`${styles["gateway-layer"]}`}
             style={
                 {
-                    "--gateway-layer-scale": `${scaleX < 0 ? 0 : scaleX} ${
-                        scaleY < 0 ? 0 : scaleY
-                    }`,
-                    "--gateway-layer-color": `hsl(${hue}, 100%, ${lightness}%)`,
+                    "--i": i,
+                    transform: `translate3d(0, ${yTranslate}%, 0) scale(${scale}, ${scale})`,
+                    backgroundColor: `hsl(${hue}, 100%, ${lightness}%)`,
+                    // backgroundColor: "purple",
+                    // border: "1px solid black",
+                    top: `${i * GATEWAY_LAYERS_SPACING}vw`,
+                    left: `${i * GATEWAY_LAYERS_SPACING}vw`,
+                    right: `${i * GATEWAY_LAYERS_SPACING}vw`,
                 } as React.CSSProperties
             }
-            initial={{
-                y: 80
-            }}
-            animate={{
-                y: 0,
-            }}
-            transition={{
-                delay: 0.3 + (i + 1) * 0.07,
-                type: "spring",
-                stiffness: 200,
-                damping: 10,
-            }}
-        ></motion.div>
+        ></div>
     );
 }
 
 export function Hero(props: IHeroProps) {
-    const { scrollY } = useIsPageScrolled();
-
     return (
         <section className={`${styles.hero} inline-padding`}>
             <div className={`${styles.headline}`}>
@@ -210,7 +201,7 @@ export function Hero(props: IHeroProps) {
                     },
                 }}
                 className={`${styles["gateway"]}`}
-                style={{ height: `${GATEWAY_LAYERS_COUNT * 50}px` }}
+                style={{ height: `${GATEWAY_LAYERS_COUNT * 30}px` }}
             >
                 {new Array(GATEWAY_LAYERS_COUNT).fill(0).map((_, i) => (
                     <GateWayLayer key={i} i={i} />

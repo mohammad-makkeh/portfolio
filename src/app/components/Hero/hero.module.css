@@ -41,23 +41,28 @@
 }
 
 .gateway{
-    width: 100%;
-    margin-top: 80px;
+    width: 70%;
+    margin-block: 300px;
     position: relative;
+    z-index: 3;
+    transform-style: preserve-3d;
+    perspective: 3000px;
 }
 .gateway-layer{
-    background-color: var(--gateway-layer-color);
     border-radius: 100px 100px 0 0 ;
     position: absolute;
     bottom: 0;
-    scale: var(--gateway-layer-scale);
+    transform: translate3d(0, 0%, 0);
     transform-origin: bottom;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    translate: -50% 0;
-    z-index: 2;
-    transition: translate .2s ease-in-out;
+    inset: 0;
+    translate: 0 20px;
+    animation: slide-up .4s calc((var(--i) + 4) * 0.08s) ease forwards;
+}
+
+@keyframes slide-up {
+    to {
+        translate: 0 0;
+    }
 }
 
 

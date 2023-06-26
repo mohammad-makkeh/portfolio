@@ -22,13 +22,13 @@ export default function Glow({
     function getOpacity(): number {
         switch (intensity) {
             case "low":
-                return 0.25;
+                return 0.3;
             case "medium":
                 return 0.45;
             case "high":
                 return 0.6;
             default:
-                return 0.25;
+                return 0.3;
         }
     }
     function getWidth(): string {
