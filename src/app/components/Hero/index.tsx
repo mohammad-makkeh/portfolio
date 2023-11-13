@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./hero.module.css";
 import * as React from "react";
 import { motion, useInView } from "framer-motion";
 import Glow from "@/components/Glow";
-import useIsPageScrolled from "@/hooks/useIsPageScrolled";
+// import useIsPageScrolled from "@/hooks/useIsPageScrolled";
 
 export interface IHeroProps {}
 
@@ -12,18 +13,19 @@ const GATEWAY_LAYERS_BASE_HUE: number = 267;
 const GATEWAY_LAYERS_SPACING: number = 1.25;
 
 function GateWayLayer({ i }: { i: number }) {
-    const { scrollY } = useIsPageScrolled();
+    // const { scrollY } = useIsPageScrolled();
+    const scrollY = 0;
     // const gatewayLayerRef = React.useRef(null);
 
     const hue = GATEWAY_LAYERS_BASE_HUE + i * 2;
     const lightness = 50 + (i + 1) * Math.ceil(50 / GATEWAY_LAYERS_COUNT);
 
-    
     const iInverse = GATEWAY_LAYERS_COUNT - i;
-    const scaleFactor = ((GATEWAY_LAYERS_COUNT - 1) * 400) - i * 400;
-    const scrollScale = 1 + ((scrollY * iInverse * 0.09) * scaleFactor) / 19000000;
-    const translateScale = (scrollY * i * 0.01) ;
-    
+    const scaleFactor = (GATEWAY_LAYERS_COUNT - 1) * 400 - i * 400;
+    const scrollScale =
+        1 + (scrollY * iInverse * 0.09 * scaleFactor) / 19000000;
+    const translateScale = scrollY * i * 0.01;
+
     const scale = Math.min(scrollScale, 2.5);
     const yTranslate = Math.min(translateScale, 400);
 
@@ -51,6 +53,8 @@ function GateWayLayer({ i }: { i: number }) {
 export function Hero(props: IHeroProps) {
     return (
         <section className={`${styles.hero} inline-padding`}>
+            
+
             <div className={`${styles.headline}`}>
                 <motion.h1
                     initial={{
@@ -187,7 +191,18 @@ export function Hero(props: IHeroProps) {
                 </motion.h2>
             </div>
 
-            <motion.div
+
+            <h1
+                style={{
+                    fontSize: "5rem",
+                    marginTop: '6rem'
+                }}
+            >
+                Hi, I'm Mohammad Makkeh
+            </h1>
+
+
+            {/* <motion.div
                 initial={{
                     y: 100,
                     opacity: 0,
@@ -206,7 +221,7 @@ export function Hero(props: IHeroProps) {
                 {new Array(GATEWAY_LAYERS_COUNT).fill(0).map((_, i) => (
                     <GateWayLayer key={i} i={i} />
                 ))}
-            </motion.div>
+            </motion.div> */}
 
             {/* glows */}
             <Glow
