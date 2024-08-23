@@ -1,5 +1,6 @@
 .main {
     position: relative;
+    z-index: 50;
     min-height: calc(100vh - var(--header-height));
 }
 

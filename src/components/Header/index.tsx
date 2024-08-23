@@ -14,7 +14,7 @@ export function Header(props: IHeaderProps) {
     const isScrolled = false;
 
     return (
-        <header className={`${styles.header} inline-padding ${isScrolled ? styles['header-blur'] : ''}`}>
+        <header className={`${styles.header} inline-padding  ${isScrolled ? styles['header-blur'] : ''}`}>
             <Link href="/" className={`${styles.branding}`}>
                 <div className={`${styles.logo}`}>
                     <Image

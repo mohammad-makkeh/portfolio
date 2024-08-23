@@ -52,7 +52,7 @@ function GateWayLayer({ i }: { i: number }) {
 
 export function Hero(props: IHeroProps) {
     return (
-        <section className={`${styles.hero} inline-padding`}>
+        <section className={`${styles.hero} inline-padding z-50 pointer-events-none`}>
             
 
             <div className={`${styles.headline}`}>
