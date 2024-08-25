@@ -63,9 +63,7 @@ body {
     color: var(--color-type);
     min-height: 100vh;
 }
-.wrapper {
-    padding-top: var(--header-height);
-}
+
 a {
     color: inherit;
     text-decoration: none;

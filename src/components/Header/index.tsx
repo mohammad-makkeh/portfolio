@@ -6,9 +6,9 @@ import localImageLoader from "@/helpers/localImageLoader";
 import Nav from "./Nav";
 // import useIsPageScrolled from "@/hooks/useIsPageScrolled";
 
-export interface IHeaderProps {}
 
-export function Header(props: IHeaderProps) {
+
+export function Header() {
 
     // const {isScrolled} = useIsPageScrolled();
     const isScrolled = false;
