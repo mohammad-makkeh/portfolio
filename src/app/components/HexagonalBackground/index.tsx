@@ -16,9 +16,11 @@ export default function HexagonalBackground() {
     const GLOW_SIZE = 200;
     const THRESHOLD_TO_ADD_NEW_GLOW = GLOW_SIZE / 2;
 
-    audioRef.current = new Audio("/popp.mp3");
-    audioRef.current.volume = 1;
-
+    useEffect(() => {
+        audioRef.current = new Audio("/popp.mp3");
+        audioRef.current.volume = 1;
+    }, [])
+    
     useEffect(() => {
         function handleMouseMove(e: any) {
             setTimeout(() => {
@@ -65,11 +67,6 @@ export default function HexagonalBackground() {
                         };
                     }
                 }
-
-                // mainGlowRef.current.style.top =
-                //     e.clientY + window.scrollY - GLOW_SIZE / 6 + "px";
-                // mainGlowRef.current.style.left =
-                //     e.clientX - GLOW_SIZE / 6 + "px";
 
                 if (!pivotPointRef.current) {
                     pivotPointRef.current = {
@@ -121,10 +118,12 @@ function getDistanceBetweenTwoPoints(a: Point, b: Point): number {
 }
 
 function getHexagonCols() {
+    if(typeof window === 'undefined') return 0;
     return Math.ceil(window.innerWidth / 104 + 1);
 }
 
 function getHexagonRows() {
+    if(typeof window === 'undefined') return 0;
     return Math.ceil(window.innerHeight / (60 + 30) + 1);
 }
 
