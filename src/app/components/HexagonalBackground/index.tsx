@@ -3,23 +3,24 @@ import { useEffect, useRef, useState } from "react";
 import HexagonGrid from "../HexagonGrid";
 import { Point } from "framer-motion";
 import { CellContent } from "@/types";
+import DeformingLetter from "../DeformingLetter";
 
 export default function HexagonalBackground() {
-    const [effectsEnabled, setEffectsEnabled] = useState(true);
+    const [effectsEnabled, setEffectsEnabled] = useState(false);
 
     const mainGlowRef = useRef<any>();
     const containerRef = useRef<any>();
     const glowsContainerRef = useRef<any>();
-    const audioRef = useRef<HTMLAudioElement | null>(null);
+    // const audioRef = useRef<HTMLAudioElement | null>(null);
     const pivotPointRef = useRef<Point>();
 
     const GLOW_SIZE = 200;
     const THRESHOLD_TO_ADD_NEW_GLOW = GLOW_SIZE / 2;
 
-    useEffect(() => {
-        audioRef.current = new Audio("/popp.mp3");
-        audioRef.current.volume = 1;
-    }, [])
+    // useEffect(() => {
+    //     audioRef.current = new Audio("/popp.mp3");
+    //     audioRef.current.volume = 1;
+    // }, [])
     
     useEffect(() => {
         function handleMouseMove(e: any) {
@@ -48,10 +49,10 @@ export default function HexagonalBackground() {
                         newGlow.style.mask =
                             "radial-gradient(circle at 50% 50%, #0009 10%, transparent 70%)";
                         glowsContainerRef.current.append(newGlow);
-                        if (audioRef.current) {
-                            audioRef.current.currentTime = 0;
-                            audioRef.current?.play();
-                        }
+                        // if (audioRef.current) {
+                        //     audioRef.current.currentTime = 0;
+                        //     audioRef.current?.play();
+                        // }
 
                         setTimeout(() => {
                             newGlow.style.opacity = "0";
@@ -84,7 +85,7 @@ export default function HexagonalBackground() {
     return (
         <>
             <div
-                className="absolute max-h-[105vh] overflow-hidden z-50 -top-[60px] -left-[60px]"
+                className="absolute max-h-[105vh] overflow-hidden z-50 -top-[60px] -left-[60px] select-none"
                 ref={containerRef}
                 onMouseEnter={() => setEffectsEnabled(true)}
                 onMouseLeave={() => setEffectsEnabled(false)}
@@ -244,7 +245,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol - 4,
             },
-            content: <span className="text-lg">F</span>,
+            content: <DeformingLetter className="text-lg" letter="F" /> ,
             hideGlow: true,
         },
         {
@@ -252,7 +253,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol - 3,
             },
-            content: <span className="text-lg">R</span>,
+            content: <DeformingLetter className="text-lg" letter="R" /> ,
             hideGlow: true,
         },
         {
@@ -260,7 +261,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol - 2,
             },
-            content: <span className="text-lg">O</span>,
+            content: <DeformingLetter className="text-lg" letter="O" /> ,
             hideGlow: true,
         },
         {
@@ -268,7 +269,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol - 1,
             },
-            content: <span className="text-lg">N</span>,
+            content: <DeformingLetter className="text-lg" letter="N" /> ,
             hideGlow: true,
         },
         {
@@ -276,7 +277,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol + 1,
             },
-            content: <span className="text-lg">T</span>,
+            content: <DeformingLetter className="text-lg" letter="T" /> ,
             hideGlow: true,
         },
         {
@@ -284,7 +285,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol + 2,
             },
-            content: <span className="text-lg">E</span>,
+            content: <DeformingLetter className="text-lg" letter="E" /> ,
             hideGlow: true,
         },
         {
@@ -292,7 +293,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol + 3,
             },
-            content: <span className="text-lg">N</span>,
+            content: <DeformingLetter className="text-lg" letter="N" /> ,
             hideGlow: true,
         },
         {
@@ -300,7 +301,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow,
                 col: centerCol + 4,
             },
-            content: <span className="text-lg">D</span>,
+            content: <DeformingLetter className="text-lg" letter="D" /> ,
             hideGlow: true,
         },
         // senior
@@ -309,7 +310,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol - 3,
             },
-            content: <span className="text-lg text-sky-400">S</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="S" />,
             hideGlow: true,
         },
         {
@@ -317,7 +318,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol - 2,
             },
-            content: <span className="text-lg text-sky-400">E</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="E" />,
             hideGlow: true,
         },
         {
@@ -325,7 +326,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol - 1,
             },
-            content: <span className="text-lg text-sky-400">N</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="N" />,
             hideGlow: true,
         },
         {
@@ -333,7 +334,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol - 0,
             },
-            content: <span className="text-lg text-sky-400">I</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="I" />,
             hideGlow: true,
         },
         {
@@ -341,7 +342,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol + 1,
             },
-            content: <span className="text-lg text-sky-400">O</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="O" />,
             hideGlow: true,
         },
         {
@@ -349,7 +350,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow - 1,
                 col: centerCol + 2,
             },
-            content: <span className="text-lg text-sky-400">R</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="R" />,
             hideGlow: true,
         },
         // engineer
@@ -358,7 +359,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol - 4,
             },
-            content: <span className="text-lg text-sky-400">E</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="E" />,
             hideGlow: true,
         },
         {
@@ -366,7 +367,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol - 3,
             },
-            content: <span className="text-lg text-sky-400">N</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="N" />,
             hideGlow: true,
         },
         {
@@ -374,7 +375,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol - 2,
             },
-            content: <span className="text-lg text-sky-400">G</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="G" />,
             hideGlow: true,
         },
         {
@@ -382,7 +383,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol - 1,
             },
-            content: <span className="text-lg text-sky-400">I</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="I" />,
             hideGlow: true,
         },
         {
@@ -390,7 +391,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol - 0,
             },
-            content: <span className="text-lg text-sky-400">N</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="N" />,
             hideGlow: true,
         },
         {
@@ -398,7 +399,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol + 1,
             },
-            content: <span className="text-lg text-sky-400">E</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="E" />,
             hideGlow: true,
         },
         {
@@ -406,7 +407,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol + 2,
             },
-            content: <span className="text-lg text-sky-400">E</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="E" />,
             hideGlow: true,
         },
         {
@@ -414,7 +415,7 @@ function getCellContents(): CellContent[] {
                 row: centerRow + 1,
                 col: centerCol + 3,
             },
-            content: <span className="text-lg text-sky-400">R</span>,
+            content: <DeformingLetter className="text-lg text-sky-400" letter="R" />,
             hideGlow: true,
         },
     ];

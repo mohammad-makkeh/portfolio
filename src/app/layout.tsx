@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
     return (
         <html className={montserrat.className} lang="en">
-            <body>
+            <body className="cursor-none">
                 <div className="wrapper" style={{overflow:'hidden'}}>
                     <Header />
                     {children}

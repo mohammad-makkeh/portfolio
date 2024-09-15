@@ -6,8 +6,8 @@ export interface IGlowProps {
     right?: string;
     bottom?: string;
     color?: "red" | "purple" | "lightblue";
-    size?: "small" | "medium" | "large";
-    intensity?: "low" | "medium" | "high";
+    size?: "small" | "medium" | "large" | "huge";
+    intensity?: "low" | "medium" | "high" | "intense";
 }
 
 export default function Glow({
@@ -27,6 +27,8 @@ export default function Glow({
                 return 0.45;
             case "high":
                 return 0.6;
+            case "intense":
+                return 0.9;
             default:
                 return 0.3;
         }
@@ -39,6 +41,8 @@ export default function Glow({
                 return 'max(20vw, 300px)';
             case "large":
                 return 'max(30vw, 500px)';
+            case "huge":
+                return 'max(40vw, 800px)';
             default:
                 return 'max(30vw, 500px)';
         }

@@ -8,7 +8,7 @@ import Glow from "@/components/Glow";
 export function Hero() {
 
     return (
-        <section className={`min-h-screen pt-[100px] flex py-9 flex-col gap-8 items-center text-center relative inline-padding z-50 pointer-events-none`}>
+        <section className={`min-h-screen pt-[100px] flex flex-col gap-8 items-center text-center relative inline-padding z-50 pointer-events-none`}>
             <div>
                 <motion.h1
                     className="text-6xl font-bold"
@@ -25,89 +25,8 @@ export function Hero() {
                     }}
                 >
                     From{" "}
-                    <span className={"relative"}>
-                        Pixels
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "14px",
-                                    left: "4px",
-                                    "--delay": "0s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "40px",
-                                    left: "4px",
-                                    "--delay": ".8s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "45px",
-                                    left: "48px",
-                                    "--delay": ".8s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "38px",
-                                    left: "80px",
-                                    "--delay": "1.4s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "48px",
-                                    left: "120px",
-                                    "--delay": "0s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "25px",
-                                    left: "110px",
-                                    "--delay": ".8s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "33px",
-                                    left: "137px",
-                                    "--delay": "1.4s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                        <span
-                            className={`absolute bg-primary z-[2] w-3 h-3 animate-flicker-pixel`}
-                            style={
-                                {
-                                    top: "25px",
-                                    left: "171px",
-                                    "--delay": ".8s",
-                                } as React.CSSProperties
-                            }
-                        ></span>
-                    </span>{" "}
+                    <img src="/img/pixelsFlicker.gif" alt="logo" className="inline-block h-[52px] mb-5"/>
+                    {" "}
                     to <span className="text-gradient-primary">Perfection</span>
                 </motion.h1>
                 <motion.h2
@@ -129,10 +48,10 @@ export function Hero() {
                     <motion.span
                         initial={{ rotate: 0 }}
                         animate={{
-                            rotate: 3,
+                            rotate: 4,
                             transformOrigin: "right",
                             transition: {
-                                delay: 0.8,
+                                delay: 3,
                                 duration: 0.5,
                                 type: "spring",
                                 stiffness: 200,
@@ -164,10 +83,10 @@ export function Hero() {
                 color="purple"
             />
             <Glow
-                top="-240px"
+                top="-350px"
                 right="200px"
-                size="large"
-                intensity="low"
+                size="huge"
+                intensity="high"
                 color="red"
             />
             <Glow

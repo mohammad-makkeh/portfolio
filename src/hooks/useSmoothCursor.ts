@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function useSmoothCursor() {
     const hexaCursorRef = useRef<HTMLDivElement>(null);
@@ -6,6 +6,7 @@ export default function useSmoothCursor() {
     const mousePosition = useRef({ x: 0, y: 0 });
     const cursorPosition = useRef({ x: 0, y: 0 });
     const animationFrame = useRef<number>();
+    const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
 
     const EASING_FACTOR = 0.06;
 
@@ -38,14 +39,32 @@ export default function useSmoothCursor() {
             animationFrame.current = requestAnimationFrame(updateCursor);
         }
 
+        function handleMouseEnter() {
+            setIsHoveringInteractive(true);
+        }
+
+        function handleMouseLeave() {
+            setIsHoveringInteractive(false);
+        }
+
         document.addEventListener("mousemove", followCursor);
         animationFrame.current = requestAnimationFrame(updateCursor);
+
+        const interactiveElements = document.querySelectorAll('a, button');
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', handleMouseEnter);
+            element.addEventListener('mouseleave', handleMouseLeave);
+        });
 
         return () => {
             document.removeEventListener("mousemove", followCursor);
             cancelAnimationFrame(animationFrame.current!);
+            interactiveElements.forEach(element => {
+                element.removeEventListener('mouseenter', handleMouseEnter);
+                element.removeEventListener('mouseleave', handleMouseLeave);
+            });
         };
     }, []);
 
-    return {hexaCursorRef, mainCursorRef};
+    return { hexaCursorRef, mainCursorRef, isHoveringInteractive };
 }
