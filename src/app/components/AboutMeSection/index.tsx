@@ -26,12 +26,12 @@ export default function AboutMeSection(props: IAboutMeSectionProps) {
 
     return (
         <div className="relative flex items-center justify-center p-4">
-            <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-7xl w-full grid  grid-cols-2 gap-16 lg:grid-cols-1">
                 {/* Image Column */}
                 <motion.div
                     initial={{ opacity: 0, x: -200 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.8 }}
                     className={`w-full`}
                 >
                     <div className="relative w-full pt-[110%]">
