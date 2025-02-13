@@ -9,7 +9,6 @@ const Roots: React.FC<{ height?: number }> = ({ height = 2000 }) => {
         y: null,
         r: 30,
     });
-    const particlesRef = useRef<Particle[]>([]);
     let c: CanvasRenderingContext2D | null = null;
 
     useEffect(() => {
@@ -22,21 +21,12 @@ const Roots: React.FC<{ height?: number }> = ({ height = 2000 }) => {
             }
         }
 
-        const handleKeyPress = (e: KeyboardEvent) => {
-            if (e.key === 'p') {
-                console.log(particlesRef.current);
-            }
-        };
-
-        window.addEventListener('keypress', handleKeyPress);
-
         return () => {
             // Cleanup event listeners
             window.removeEventListener("resize", handleResize);
             window.removeEventListener("mousedown", handleMouseDown);
             window.removeEventListener("mouseup", handleMouseUp);
             window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener('keypress', handleKeyPress);
         };
     }, []);
 
@@ -111,7 +101,6 @@ const Roots: React.FC<{ height?: number }> = ({ height = 2000 }) => {
             const colors = ['#1E90FF', '#8A2BE2', '#FF1493']; // vibrant blue, purple, red pink
             let clr = colors[Math.floor(Math.random() * colors.length)];
             let particle = new Particle(mouseRef.current.x || 0, mouseRef.current.y || 0, r, v, clr);
-            particlesRef.current.push(particle);
             particle.update(c);
         }
     };
@@ -125,7 +114,7 @@ const Roots: React.FC<{ height?: number }> = ({ height = 2000 }) => {
                 left: 0,
                 zIndex: -10,
                 background: "transparent",
-                opacity: 0.1,
+                opacity: 1,
                 width: "100%",
                 height: height,
             }}

@@ -107,9 +107,9 @@ export default function AboutMeSection(props: IAboutMeSectionProps) {
                                     id="animatedPath"
                                     d="M9.09705 144.783L78.8573 31.9468C79.3145 31.2073 80.4323 31.3632 80.6698 32.1995L99.8306 99.6706C100.112 100.663 101.563 100.677 101.831 99.6816C105.824 84.8188 122.503 29.2241 153.186 9.54388C153.839 9.12522 154.675 9.5452 154.675 10.3207C154.675 24.8293 154.675 129.143 154.675 197.737"
                                     stroke="#08020e"
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill="none"
-                                    stroke-linecap="round"
+                                    strokeLinecap="round"
                                 />
                             </svg>
                         </svg>

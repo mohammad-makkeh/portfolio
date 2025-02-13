@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useMemo } from "react";
+import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import localFont from "next/font/local";
 import Roots from "./Roots";
@@ -124,6 +125,22 @@ export default function ExperienceTimeline() {
 
     return (
         <div className="relative py-56 select-none">
+            <motion.h2
+                initial={{ opacity: 0, y: 120 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 1 }}
+                className="text-white text-6xl font-bold text-center mb-3"
+            >
+                Down to my roots
+            </motion.h2>
+            <motion.p
+                initial={{ opacity: 0, y: 120 }}
+                whileInView={{ opacity: 0.4, y: 0 }}
+                viewport={{ once: true, amount: 1 }}
+                className="text-white text-center text-xl mb-20"
+            >
+                Move your mouse to draw cool roots
+            </motion.p>
             <div
                 ref={containerRef}
                 className="flex-grow relative min-h-[2000px]"
@@ -140,7 +157,7 @@ export default function ExperienceTimeline() {
                         style={{
                             backgroundImage: `linear-gradient(to bottom, 
                             #2b42ff ${scrollPercentage}%, 
-                            #ffffff11 ${scrollPercentage}%)`,
+                            #150f1b ${scrollPercentage}%)`,
                         }}
                     ></span>
                     {new Array(150).fill(0).map((_, i) => {
@@ -319,7 +336,6 @@ export default function ExperienceTimeline() {
                     }
                 />
             )}
-            {/* <Roots h`e`ight={2000} /> */}
         </div>
     );
 }

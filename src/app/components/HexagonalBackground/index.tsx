@@ -8,11 +8,11 @@ import DeformingLetter from "../DeformingLetter";
 export default function HexagonalBackground() {
     const [effectsEnabled, setEffectsEnabled] = useState(false);
 
-    const mainGlowRef = useRef<any>();
-    const containerRef = useRef<any>();
-    const glowsContainerRef = useRef<any>();
+    const mainGlowRef = useRef<any>(undefined);
+    const containerRef = useRef<any>(undefined);
+    const glowsContainerRef = useRef<any>(undefined);
     // const audioRef = useRef<HTMLAudioElement | null>(null);
-    const pivotPointRef = useRef<Point>();
+    const pivotPointRef = useRef<Point>(undefined);
 
     const GLOW_SIZE = 200;
     const THRESHOLD_TO_ADD_NEW_GLOW = GLOW_SIZE / 2;

@@ -5,7 +5,7 @@ export default function useSmoothCursor() {
     const mainCursorRef = useRef<HTMLDivElement>(null);
     const mousePosition = useRef({ x: 0, y: 0 });
     const cursorPosition = useRef({ x: 0, y: 0 });
-    const animationFrame = useRef<number>();
+    const animationFrame = useRef<number>(undefined);
     const [isHoveringInteractive, setIsHoveringInteractive] = useState(false);
 
     const EASING_FACTOR = 0.06;

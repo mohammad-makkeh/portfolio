@@ -1,17 +1,19 @@
 "use client";
 import { cn } from "@/lib/utils";
-import AboutMeSection from "./components/AboutMeSection";
-import { Hero } from "./components/Hero";
-import HexagonalBackground from "./components/HexagonalBackground";
-import ProjectsSection from "./components/ProjectsSection";
+import AboutMeSection from "../components/AboutMeSection";
+import { Hero } from "../components/Hero";
+import HexagonalBackground from "../components/HexagonalBackground";
+import ProjectsSection from "../components/ProjectsSection";
 import useSmoothCursor from "@/hooks/useSmoothCursor";
-import ExperienceTimeline from "./components/ExperienceTimeline";
-import SmoothScrolling from "./components/SmoothScrollProvider";
+import ExperienceTimeline from "../components/ExperienceTimeline";
+import SmoothScrolling from "../components/SmoothScrollProvider";
 import IconCloud from "@/components/magicui/icon-cloud";
+import Footer from "../components/Footer";
 
 export default function Home() {
     const { hexaCursorRef, mainCursorRef, isHoveringInteractive } =
         useSmoothCursor();
+
 
     return (
         <SmoothScrolling>
@@ -38,7 +40,8 @@ export default function Home() {
                 <AboutMeSection />
                 <ExperienceTimeline />
                 <ProjectsSection />
-                {/* <IconCloud
+                <Footer/>
+                <IconCloud
                     iconSlugs={[
                         "typescript",
                         "javascript",
@@ -62,8 +65,13 @@ export default function Home() {
                         "visualstudiocode",
                         "figma",
                     ]}
-                /> */}
+                />
+                <br />
+                <br />
+                <br />
             </main>
         </SmoothScrolling>
     );
 }
+
+

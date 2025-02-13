@@ -35,9 +35,10 @@ export default function ExperienceCard({
             style={style}
         >
             <motion.div
-                className={`w-[400px] p-6 overflow-hidden rounded-lg backdrop-filter backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300`}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -200 : 200 }}
+                className={`w-[400px] p-6 overflow-hidden rounded-lg backdrop-filter backdrop-blur-sm bg-white/10 border border-white/20 shadow-lg hover:shadow-xl`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                transition={{duration: 0.3, ease:"easeIn"}}
                 viewport={{ once: true, amount: 1 }}
             >
                 <div className="relative z-10">

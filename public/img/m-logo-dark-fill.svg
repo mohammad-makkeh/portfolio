@@ -1,7 +1,7 @@
 <svg width="271" height="271" viewBox="0 0 271 271" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_16)">
 <rect width="271" height="271" rx="135.5" fill="white"/>
-<path d="M74.4394 268.1V94.3984L124.908 186.871L196.561 -6.09624V263.492" stroke="#12021F" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M74.4394 268.1V94.3984L124.908 186.871L196.561 -6.09624V263.492" stroke="#12021F" stroke-width="15" strokeLinecap="round" stroke-linejoin="round"/>
 </g>
 <rect x="4" y="4" width="263" height="263" rx="131.5" stroke="#12021F" stroke-width="8"/>
 <defs>

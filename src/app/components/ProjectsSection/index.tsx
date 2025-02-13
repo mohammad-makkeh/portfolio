@@ -1,30 +1,14 @@
 import * as React from "react";
 import ProjectsTitle from "./ProjectsTitle";
-import Project from "./Project";
+import ProjectHexCollection from "./ProjectHexCollection";
 
 export interface IProjectsSectionProps {}
 
 export default function ProjectsSection(props: IProjectsSectionProps) {
     return (
         <div>
-            <ProjectsTitle />
-            <div className="relative">
-                <div className="flex gap-2 flex-none justify-center">
-                    {projects.slice(0, 2).map((project, index) => (
-                        <Project key={index} project={project} />
-                    ))}
-                </div>
-                <div className="flex gap-2 flex-none justify-center -translate-y-[100px] 2xl:-translate-y-[80px] xl:-translate-y-[73px] lg:-translate-y-[63px] md:-translate-y-[50px] sm:-translate-y-[38px]">
-                    {projects.slice(2, 5).map((project, index) => (
-                        <Project key={index + 2} project={project} />
-                    ))}
-                </div>
-                <div className="flex gap-2 flex-none justify-center -translate-y-[200px] 2xl:-translate-y-[180px] xl:-translate-y-[173px] lg:-translate-y-[163px] md:-translate-y-[150px] sm:-translate-y-[138px]">
-                    {projects.slice(5, 7).map((project, index) => (
-                        <Project key={index + 5} project={project} />
-                    ))}
-                </div>
-            </div>
+            {/* <ProjectsTitle /> */}
+          {/* <ProjectHexCollection projects={projects}/> */}
         </div>
     );
 }
@@ -32,7 +16,7 @@ export default function ProjectsSection(props: IProjectsSectionProps) {
 const projects = [
     {
         image: "/img/prj-nx.png",
-        title: "AI-Powered Task Manager",
+        title: "NewsletterX",
         demoLink: "https://ai-task-manager.demo.com",
         githubLink: "https://github.com/username/ai-task-manager",
         description:
@@ -40,7 +24,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "Blockchain Voting System",
+        title: "NewsletterX",
         demoLink: "https://blockchain-voting.demo.com",
         githubLink: "https://github.com/username/blockchain-voting",
         description:
@@ -48,7 +32,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "AR Interior Designer",
+        title: "NewsletterX",
         demoLink: "https://ar-interior.demo.com",
         githubLink: "https://github.com/username/ar-interior-designer",
         description:
@@ -56,7 +40,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "Eco-Friendly Travel Planner",
+        title: "NewsletterX",
         demoLink: "https://eco-travel.demo.com",
         githubLink: "https://github.com/username/eco-travel-planner",
         description:
@@ -64,7 +48,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "Quantum Computing Simulator",
+        title: "NewsletterX",
         demoLink: "https://quantum-sim.demo.com",
         githubLink: "https://github.com/username/quantum-simulator",
         description:
@@ -72,7 +56,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "Personalized Health AI",
+        title: "NewsletterX",
         demoLink: "https://health-ai.demo.com",
         githubLink: "https://github.com/username/personalized-health-ai",
         description:
@@ -80,7 +64,7 @@ const projects = [
     },
     {
         image: "/img/prj-nx.png",
-        title: "Decentralized Social Media Platform",
+        title: "NewsletterX",
         demoLink: "https://decentralized-social.demo.com",
         githubLink: "https://github.com/username/decentralized-social",
         description:

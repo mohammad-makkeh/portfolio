@@ -1,0 +1,130 @@
+.bill-root {
+    --bill-width: 1242px;
+    --bill-height: calc(var(--bill-width) * 0.55);
+
+    /* left rim vars */
+    --left-rim-x-pos: 0px;
+    --left-rim-width: 81.5px;
+
+    /* right rim vars */
+    --right-rim-width: 85.3px;
+    --right-rim-x-pos: calc(var(--bill-width) - var(--right-rim-width));
+
+    /* top left corner vars */
+    --top-left-corner-width: 267.03px;
+    --top-left-corner-height: calc(var(--top-left-corner-width) * 0.4709);
+    --top-left-corner-x-pos: var(--left-rim-width);
+    --top-left-corner-y-pos: 0;
+
+
+    /* top right corner vars */
+    --top-right-corner-width: 262.37px;
+    --top-right-corner-height: var(--top-left-corner-height); /* give same height */
+    --top-right-corner-x-pos: calc(var(--bill-width) - var(--right-rim-width) - var(--top-right-corner-width));
+    --top-right-corner-y-pos: 0;
+
+
+    /* top center bar vars */
+    --top-center-bar-width: 511.55px;
+    --top-center-bar-height: var(--top-left-corner-height); /* give same height */
+    --top-center-bar-x-pos: 365.61px;
+    --top-center-bar-y-pos: 0;
+    
+    
+    /* text bank name vars */
+    --text-bank-name-width: 408.62px;
+    --text-bank-name-height: calc(var(--text-bank-name-width) * 0.258);
+    --text-bank-name-x-pos: 506.06px;
+    --text-bank-name-y-pos: 24.56px;
+    --text-bank-name-z-index: 100;
+
+
+    width: var(--bill-width);
+    height: 686.98px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.left-rim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--left-rim-width);
+    height: 100%;
+}
+.right-rim {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--right-rim-width);
+    height: 100%;
+}
+
+/* blocks */
+.block {
+    --width: 267.03px;
+    height: calc(var(--width) * 0.47);
+}
+
+/* top left corner */
+.top-left-corner {
+    position: absolute;
+    top: var(--top-left-corner-y-pos);
+    left: var(--top-left-corner-x-pos);
+    width: var(--top-left-corner-width);
+    height: var(--top-left-corner-height);
+}
+.yellow-star {
+    --yellow-star-width: 94.61px;
+
+    position: absolute;
+    width: var(--yellow-star-width);
+    height: calc(var(--yellow-star-width) * 0.95);
+}
+.top-left-corner-yellow-star-1{
+    top: 21px;
+    left: 45px;
+}
+.top-left-corner-yellow-star-2{
+    top: 21px;
+    left: calc(45px + var(--yellow-star-width));
+}
+.top-left-100 {
+    position: absolute;
+    top: 37.73px;
+    left: 46px;
+    width: 194px;
+    height: 73.42px;
+}
+
+
+
+/* top right corner */
+.top-right-corner {
+    position: absolute;
+    top: var(--top-right-corner-y-pos);
+    left: var(--top-right-corner-x-pos);
+    width: var(--top-right-corner-width);
+    height: var(--top-right-corner-height);
+}
+
+
+/* top center bar */
+.top-center-bar{
+    position: absolute;
+    top: var(--top-center-bar-y-pos);
+    left: var(--top-center-bar-x-pos);
+    width: var(--top-center-bar-width);
+    height: var(--top-center-bar-height);
+}
+
+
+/* text bank name */
+.text-bank-name{
+    position: absolute;
+    top: var(--text-bank-name-y-pos);
+    left: var(--text-bank-name-x-pos);
+    width: var(--text-bank-name-width);
+    height: var(--text-bank-name-height);
+    z-index: var(--text-bank-name-z-index);
+}
