@@ -14,7 +14,6 @@ export default function Home() {
     const { hexaCursorRef, mainCursorRef, isHoveringInteractive } =
         useSmoothCursor();
 
-
     return (
         <SmoothScrolling>
             <main className={"min-h-screen relative z-50"}>
@@ -40,8 +39,8 @@ export default function Home() {
                 <AboutMeSection />
                 <ExperienceTimeline />
                 <ProjectsSection />
-                <Footer/>
-                <IconCloud
+                <Footer />
+                {/* <IconCloud
                     iconSlugs={[
                         "typescript",
                         "javascript",
@@ -65,7 +64,8 @@ export default function Home() {
                         "visualstudiocode",
                         "figma",
                     ]}
-                />
+                /> */}
+
                 <br />
                 <br />
                 <br />
@@ -73,5 +73,3 @@ export default function Home() {
         </SmoothScrolling>
     );
 }
-
-
