@@ -25,8 +25,8 @@ export default function ExperienceCard({
     glowOptions,
     index,
 }: IExperienceCardProps) {
-    const ref = React.useRef(null);
-    const inView = useInView(ref, { once: true, amount: 1 });
+    const ref = React.useRef<HTMLDivElement>(null);
+    const inView = useInView(ref as React.RefObject<Element>, { once: true, amount: 1 });
 
     return (
         <div

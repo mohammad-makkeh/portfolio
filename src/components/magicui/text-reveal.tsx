@@ -17,7 +17,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: targetRef as any,
   });
   const words = text.split(" ");
 

@@ -4,14 +4,14 @@ import DeformingLetter from "../DeformingLetter";
 import DeformingWord from "../DeformingWord";
 import { useInView } from "framer-motion";
 import WordsTypewriter from "@/components/WordsTypewriter";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 import Glow from "@/components/Glow";
 
 export interface IAboutMeSectionProps {}
 
 export default function AboutMeSection(props: IAboutMeSectionProps) {
-    const svgRef = React.useRef(null);
-    const isInView = useInView(svgRef, { once: true, amount: 0.8 });
+    const svgRef = React.useRef<SVGSVGElement | null>(null);
+    const isInView = useInView(svgRef as React.RefObject<Element>, { once: true, amount: 0.8 });
     const [hasPlayed, setHasPlayed] = React.useState(false);
 
     React.useEffect(() => {
@@ -32,7 +32,7 @@ export default function AboutMeSection(props: IAboutMeSectionProps) {
                     initial={{ opacity: 0, x: -200 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.8 }}
-                    className={`w-full`}
+                    className="w-full"
                 >
                     <div className="relative w-full pt-[110%]">
                         <svg
@@ -118,7 +118,7 @@ export default function AboutMeSection(props: IAboutMeSectionProps) {
 
                 {/* Info Column */}
                 <div className="flex flex-col justify-center space-y-8">
-                    <motion.h1
+                    <motion.h1 
                         className="text-6xl font-bold"
                         initial={{ opacity: 0, y: 200 }}
                         whileInView={{ opacity: 1, y: 0 }}
