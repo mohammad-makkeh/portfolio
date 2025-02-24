@@ -22,53 +22,43 @@ const timelineData: Array<{
     description: string[];
 }> = [
     {
-        company: "TechGiant Corp",
-        position: "Senior Frontend Developer",
-        startYear: 2021,
+        startYear: 2024,
         endYear: "Present",
+        company: "DOTCOM",
+        position: "Senior Frontend Lead",
         description: [
-            "Led a team of 5 developers in building a large-scale SPA using React and TypeScript",
-            "Implemented state management using Redux and Redux Toolkit",
-            "Improved application performance, resulting in a 40% decrease in load time",
-            "Mentored junior developers and conducted code reviews",
-        ],
+            "Engineered an optimized React-based framework to develop OTT VOD TV apps for major MENA platforms on Samsung, LG, and Hisense TVs.",
+            "Enhanced React performance on low-end devices, achieving a 90% performance boost.",
+            "Reduced TV app development time by 60% through architectural improvements.",
+            "Developed CLI tools and Node.js scripts to streamline the developer experience."
+        ]
     },
     {
-        company: "WebSolutions Inc",
-        position: "Frontend Developer",
-        startYear: 2018,
-        endYear: 2021,
+        startYear: 2022,
+        endYear: 2024,
+        company: "COGNATIVEX",
+        position: "Next.js, React & JS SDK Developer",
         description: [
-            "Developed responsive web applications using Vue.js and Nuxt.js",
-            "Collaborated with UX/UI designers to implement pixel-perfect designs",
-            "Integrated RESTful APIs and GraphQL endpoints",
-            "Implemented unit and integration tests using Jest and Vue Test Utils",
-        ],
+            "Maintained and extended a JavaScript SDK for tracking user events and embedding recommendation widgets on news publisher websites.",
+            "Led the migration of a large React dashboard from class components and Redux to functional components with a modern tech stack.",
+            "Developed and enhanced complex UI components in a high-scale dashboard.",
+            "Improved the UI/UX of company products, making them 10× more intuitive.",
+            "Owned and built a major new product, including the website, Next.js dashboard, and TypeScript SDK."
+        ]
     },
     {
-        company: "StartupX",
-        position: "Junior Frontend Developer",
-        startYear: 2016,
-        endYear: 2018,
+        startYear: 2023,
+        endYear: 2024,
+        company: "AGRICOM",
+        position: "UI/UX and Data Visualization Designer",
         description: [
-            "Built and maintained multiple client websites using HTML, CSS, and JavaScript",
-            "Learned and implemented modern frontend frameworks like React and Angular",
-            "Collaborated with backend developers to integrate frontend with APIs",
-            "Participated in daily stand-ups and sprint planning meetings",
-        ],
-    },
-    {
-        company: "CodeAcademy",
-        position: "Frontend Development Intern",
-        startYear: 2015,
-        endYear: 2016,
-        description: [
-            "Assisted in developing and maintaining the company's e-learning platform",
-            "Gained hands-on experience with HTML, CSS, and JavaScript",
-            "Participated in code reviews and learned best practices",
-            "Contributed to the implementation of responsive designs",
-        ],
-    },
+            "Designed a highly specialized dashboard for agrifood cooperatives and farmers.",
+            "Conducted UX research and collaborated with users for feedback-driven design improvements.",
+            "Mapped user journeys and constructed user flows to optimize usability.",
+            "Created comprehensive product documents and reports for strategic alignment.",
+            "Developed innovative UX components to enhance user experience and accessibility."
+        ]
+    }
 ];
 
 export default function ExperienceTimeline() {
