@@ -47,8 +47,8 @@ const timelineData: Array<{
         ]
     },
     {
-        startYear: 2023,
-        endYear: 2024,
+        startYear: 2021,
+        endYear: 2022,
         company: "AGRICOM",
         position: "UI/UX and Data Visualization Designer",
         description: [
