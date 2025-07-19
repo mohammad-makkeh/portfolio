@@ -2,7 +2,7 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
 interface CountUpProps {
@@ -41,7 +41,7 @@ export default function CountUp({
     stiffness,
   });
 
-  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const isInView = useInView(ref as RefObject<HTMLElement>, { once: true, margin: "0px" });
 
   // Get number of decimal places in a number
   const getDecimalPlaces = (num: number): number => {
